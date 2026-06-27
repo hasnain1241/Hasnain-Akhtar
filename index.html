@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hasnain Akhtar — AI Engineer</title>
+<title>Hasnain Akhtar - AI Engineer</title>
 <meta name="description" content="AI Engineer specializing in Generative AI, Cloud & MLOps, and Computer Vision. FAST NUCES CS '26." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230d1533'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='800' font-size='26' fill='%23f59e0b'>HA</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,16 +61,23 @@ ul { list-style: none; }
 nav {
   position: fixed; inset: 0 0 auto 0; z-index: 999;
   height: var(--nav-h);
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center;
   padding: 0 2.5rem;
-  transition: background .3s, border-color .3s, backdrop-filter .3s;
+  background: rgba(8,13,26,.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s, backdrop-filter .3s;
 }
 nav.scrolled {
-  background: rgba(8,13,26,.88);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  background: rgba(8,13,26,.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-bottom-color: var(--border-d);
+}
+.nav-inner {
+  max-width: var(--max-w); width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
 }
 
 .nav-logo {
@@ -201,22 +208,6 @@ section { width: 100%; padding: 7rem 2.5rem; }
   max-width: var(--max-w); margin: 0 auto; padding: 0 2.5rem; width: 100%;
 }
 
-.hero-badge {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .38rem .95rem; border-radius: 999px;
-  border: 1px solid rgba(16,185,129,.3);
-  background: rgba(16,185,129,.08);
-  font-size: .74rem; font-weight: 600; color: #4ade80;
-  margin-bottom: 1.8rem; letter-spacing: .01em;
-}
-.hero-badge-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green);
-  animation: dotPulse 2s ease-in-out infinite;
-}
-@keyframes dotPulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.6;transform:scale(.85);} }
-
 .hero-hi {
   font-size: .9rem; color: var(--muted-d); font-weight: 400;
   margin-bottom: .5rem; letter-spacing: .015em;
@@ -269,25 +260,6 @@ section { width: 100%; padding: 7rem 2.5rem; }
   transition: border-color .2s, background .2s, transform .15s;
 }
 .btn-secondary:hover { border-color: var(--accent); background: rgba(245,158,11,.07); transform: translateY(-2px); }
-
-.hero-stats {
-  display: inline-flex; border: 1px solid var(--border-d); border-radius: var(--r);
-  background: var(--surface); overflow: hidden;
-}
-.stat-item {
-  padding: 1.1rem 1.6rem; border-right: 1px solid var(--border-d);
-  transition: background .2s;
-}
-.stat-item:last-child { border-right: none; }
-.stat-item:hover { background: var(--surface2); }
-.stat-num {
-  display: block; font-size: 1.65rem; font-weight: 800;
-  color: var(--accent); letter-spacing: -.04em; line-height: 1.1;
-}
-.stat-lbl {
-  display: block; font-size: .7rem; color: var(--muted-d);
-  font-weight: 500; margin-top: .2rem; white-space: nowrap;
-}
 
 .hero-scroll {
   position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
@@ -454,7 +426,7 @@ section { width: 100%; padding: 7rem 2.5rem; }
 }
 
 /* ════════════════════════════════════════════════════════════
-   EXPERIENCE  — Timeline
+   EXPERIENCE - Timeline
 ════════════════════════════════════════════════════════════ */
 #experience { background: var(--dark); }
 
@@ -653,9 +625,6 @@ footer {
   .proj-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .cert-grid { grid-template-columns: 1fr; }
-  .hero-stats { flex-direction: column; width: 100%; max-width: 300px; }
-  .stat-item { border-right: none; border-bottom: 1px solid var(--border-d); }
-  .stat-item:last-child { border-bottom: none; }
 }
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
@@ -667,22 +636,24 @@ footer {
 
 <!-- ═══ NAV ═══ -->
 <nav id="topnav">
-  <div class="nav-logo">H<span>A</span></div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="uploads/HasnainAkhtar_Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
-    <button class="nav-menu-btn" onclick="openMobile()" aria-label="Open menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
+  <div class="nav-inner">
+    <div class="nav-logo">H<span>A</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="uploads/HasnainAkhtar_Resume.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+      <button class="nav-menu-btn" onclick="openMobile()" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -705,11 +676,6 @@ footer {
   <div class="orb orb-3"></div>
 
   <div class="hero-content">
-    <div class="hero-badge fu">
-      <div class="hero-badge-dot"></div>
-      Open to Opportunities
-    </div>
-
     <p class="hero-hi fu">Hello, I'm</p>
     <h1 class="hero-name fu">Hasnain <span>Akhtar.</span></h1>
 
@@ -726,7 +692,7 @@ footer {
     <p class="hero-desc fu">
       A CS graduate building intelligent systems at the intersection of Generative AI,
       cloud-native MLOps, and computer vision. Former AI Engineer at Eighty4Digital.
-      Currently finishing my FYP — <em style="color:var(--on-dark);font-style:normal;">FinAI</em>,
+      Currently finishing my FYP, <em style="color:var(--on-dark);font-style:normal;">FinAI</em>,
       an AI-powered financial advisory platform for Pakistan.
     </p>
 
@@ -735,24 +701,6 @@ footer {
       <a href="#contact" class="btn-secondary">Get in Touch</a>
     </div>
 
-    <div class="hero-stats fu">
-      <div class="stat-item">
-        <span class="stat-num" data-target="1">0</span>
-        <span class="stat-lbl">Year Industry Exp.</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num" data-target="10">0</span>
-        <span class="stat-lbl">Projects Built</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num" data-target="40">0</span>
-        <span class="stat-lbl">% Efficiency Gained</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num" data-target="200">0</span>
-        <span class="stat-lbl">Students Mentored</span>
-      </div>
-    </div>
   </div>
 
   <div class="hero-scroll">
@@ -771,7 +719,7 @@ footer {
         <p class="about-body">
           I'm <em>Muhammad Hasnain Akhtar</em>, a Computer Science graduate from
           <em>FAST NUCES Islamabad (2026)</em> specializing in AI/ML, Generative AI,
-          and cloud-native systems. I don't just train models — I build the full pipeline:
+          and cloud-native systems. I build the full pipeline:
           from RAG chatbots and computer vision models all the way to containerized
           Kubernetes deployments and GitOps-driven CI/CD.
         </p>
@@ -783,7 +731,7 @@ footer {
           mentoring <em>200+ students</em> across AI, Machine Learning, and Android development.
         </p>
         <p class="about-body">
-          Gold Medalist — <em>Rector's List of Honors, Fall 2025.</em> Dean's List twice.
+          Gold Medalist, <em>Rector's List of Honors, Fall 2025.</em> Dean's List twice.
           AWS Certified Cloud Practitioner. Currently open to full-time AI/MLOps roles.
         </p>
         <div class="about-chips">
@@ -857,7 +805,7 @@ footer {
           <div class="proj-icon" style="background:#fef3c7">💰</div>
           <span class="proj-badge badge-ai">AI / ML</span>
         </div>
-        <div class="proj-title">FinAI — AI Financial Platform</div>
+        <div class="proj-title">FinAI: AI Financial Platform</div>
         <p class="proj-desc">
           Intelligent financial advisory platform for the Pakistani market. ML models for
           loan eligibility, credit scoring, and financial risk prediction.
@@ -899,7 +847,7 @@ footer {
         </div>
         <div class="proj-title">AWS Serverless Order Processing</div>
         <p class="proj-desc">
-          Fully serverless order pipeline on AWS — zero infrastructure management.
+          Fully serverless order pipeline on AWS with zero infrastructure management.
           API Gateway + Lambda (Python 3.12), SQS FIFO for exactly-once delivery,
           SNS for real-time notifications, DynamoDB for storage, least-privilege IAM
           and CloudWatch monitoring.
@@ -918,7 +866,7 @@ footer {
           <div class="proj-icon" style="background:#fee2e2">🔐</div>
           <span class="proj-badge badge-devops">DevSecOps</span>
         </div>
-        <div class="proj-title">DevSecOps CI/CD — Netflix Clone</div>
+        <div class="proj-title">DevSecOps CI/CD: Netflix Clone on AWS</div>
         <p class="proj-desc">
           Production-grade DevSecOps pipeline with security baked into every stage.
           Jenkins on EC2 (t2.large), SAST via SonarQube, SCA via OWASP Dependency-Check,
@@ -965,7 +913,7 @@ footer {
         <div class="proj-title">Enhanced DBSCAN Object Detection</div>
         <p class="proj-desc">
           Novel DBSCAN algorithm for detecting small objects (humans, rocks) in LiDAR
-          point clouds. Achieved ~17% accuracy improvement over baseline — first-of-its-kind
+          point clouds. Achieved ~17% accuracy improvement over baseline, a first-of-its-kind
           implementation based on research paper study.
         </p>
         <div class="proj-foot">
@@ -986,7 +934,7 @@ footer {
         <div class="proj-title">SMPL for Road Crossing Prediction</div>
         <p class="proj-desc">
           Improved pedestrian crossing prediction on the JAAD dataset. Fused SMPL body
-          models + CLIP with RGB frames, optical flow, and pose data — four-component
+          models + CLIP with RGB frames, optical flow, and pose data in a four-component
           fusion model achieving higher accuracy than single-modality baselines.
         </p>
         <div class="proj-foot">
@@ -1004,7 +952,7 @@ footer {
           <div class="proj-icon" style="background:#fee2e2">🛡️</div>
           <span class="proj-badge badge-ai">AI / ML</span>
         </div>
-        <div class="proj-title">Anomaly Detection — Network Traffic</div>
+        <div class="proj-title">Anomaly Detection: Network Traffic</div>
         <p class="proj-desc">
           Unsupervised anomaly detection system for network traffic. Implemented Isolation
           Forest, LOF, and DBSCAN with feature engineering, PCA dimensionality reduction,
@@ -1046,7 +994,7 @@ footer {
           <div class="proj-icon" style="background:#ecfdf5">⛽</div>
           <span class="proj-badge badge-app">Full-Stack</span>
         </div>
-        <div class="proj-title">Petro Pulse — Petroleum Management</div>
+        <div class="proj-title">Petro Pulse: Petroleum Management</div>
         <p class="proj-desc">
           Comprehensive fuel management system handling inventory, orders, and
           transactions. Complex stored procedures for automated reporting with
@@ -1070,7 +1018,7 @@ footer {
     <span class="sec-eyebrow fu">Tech Stack</span>
     <h2 class="sec-title fu">Skills.</h2>
     <p class="sec-sub fu">
-      From Python and PyTorch to Terraform, ArgoCD, and LangChain — full-stack AI and DevOps.
+      From Python and PyTorch to Terraform, ArgoCD, and LangChain: full-stack AI and DevOps.
     </p>
     <div class="skills-grid">
 
@@ -1175,7 +1123,7 @@ footer {
 
       <div class="tl-item fu">
         <div class="tl-dot live"></div>
-        <div class="tl-date">Oct 2025 — May 2026</div>
+        <div class="tl-date">Oct 2025 to May 2026</div>
         <div class="tl-role">Artificial Intelligence Engineer</div>
         <div class="tl-org">Eighty4Digital · Burton-Upon-Trent (Remote)</div>
         <ul class="tl-bullets">
@@ -1192,8 +1140,8 @@ footer {
 
       <div class="tl-item fu">
         <div class="tl-dot"></div>
-        <div class="tl-date">Jan 2026 — Jun 2026</div>
-        <div class="tl-role">Teaching Assistant — AI &amp; Machine Learning</div>
+        <div class="tl-date">Jan 2026 to Jun 2026</div>
+        <div class="tl-role">Teaching Assistant, AI &amp; Machine Learning</div>
         <div class="tl-org">FAST NUCES, Islamabad · AI-2002 &amp; CS-5027</div>
         <ul class="tl-bullets">
           <li>Designed and evaluated 3 hands-on ML assignments covering KNN, Linear Regression, and Decision Trees with live demo sessions</li>
@@ -1208,8 +1156,8 @@ footer {
 
       <div class="tl-item fu">
         <div class="tl-dot"></div>
-        <div class="tl-date">Aug 2025 — Jan 2026</div>
-        <div class="tl-role">Teaching Assistant — Mobile Development</div>
+        <div class="tl-date">Aug 2025 to Jan 2026</div>
+        <div class="tl-role">Teaching Assistant, Mobile Development</div>
         <div class="tl-org">FAST NUCES, Islamabad · CS4039 Software for Mobile Devices</div>
         <ul class="tl-bullets">
           <li>Designed and published course assignments on mobile application development</li>
@@ -1224,7 +1172,7 @@ footer {
 
       <div class="tl-item fu">
         <div class="tl-dot"></div>
-        <div class="tl-date">Jun 2025 — Sep 2025</div>
+        <div class="tl-date">Jun 2025 to Sep 2025</div>
         <div class="tl-role">AI Intern</div>
         <div class="tl-org">Eighty4Digital · Burton-Upon-Trent (Remote)</div>
         <ul class="tl-bullets">
@@ -1239,12 +1187,12 @@ footer {
 
       <div class="tl-item fu">
         <div class="tl-dot"></div>
-        <div class="tl-date">Aug 2022 — 2026 (ongoing)</div>
+        <div class="tl-date">Aug 2022 to 2026 (ongoing)</div>
         <div class="tl-role">B.Sc. Computer Science</div>
         <div class="tl-org">FAST NUCES, Islamabad</div>
         <ul class="tl-bullets">
           <li>Specializing in AI/ML, Generative AI, cloud systems, and computer vision</li>
-          <li>Final Year Project: FinAI — AI-powered financial advisory platform for Pakistan</li>
+          <li>Final Year Project: FinAI, an AI-powered financial advisory platform for Pakistan</li>
           <li>Gold Medal: Rector's List of Honors Fall 2025 &middot; Dean's List Fall 2024 &amp; Spring 2025</li>
         </ul>
         <div class="tl-chips">
@@ -1271,7 +1219,7 @@ footer {
           <div class="award-card">
             <div class="award-icon">🥇</div>
             <div>
-              <div class="award-name">Gold Medal — Rector's List of Honors</div>
+              <div class="award-name">Gold Medal: Rector's List of Honors</div>
               <div class="award-org">FAST NUCES · Fall 2025</div>
             </div>
           </div>
@@ -1449,29 +1397,6 @@ document.querySelectorAll('.fu').forEach((el, i) => {
   el.style.transitionDelay = (i % 6) * 0.07 + 's';
   fuObs.observe(el);
 });
-
-/* ── Stats count-up ── */
-function countUp(el) {
-  const target = +el.dataset.target;
-  const suffix = el.closest('.stat-item').querySelector('.stat-lbl').textContent.startsWith('%') ? '' : (target >= 100 ? '+' : (target === 1 ? '+' : '+'));
-  let current = 0;
-  const step  = Math.max(1, Math.floor(target / 40));
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = current + (target >= 10 ? '+' : '+');
-    if (current >= target) clearInterval(timer);
-  }, 35);
-}
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.currentTarget.querySelectorAll('[data-target]').forEach(countUp);
-      statsObs.disconnect();
-    }
-  });
-}, { threshold: 0.5 });
-const statsEl = document.querySelector('.hero-stats');
-if (statsEl) statsObs.observe(statsEl);
 
 /* ── Contact form ── */
 function handleSubmit(e) {
