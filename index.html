@@ -484,27 +484,7 @@ section { width: 100%; padding: 7rem 2.5rem; }
 ════════════════════════════════════════════════════════════ */
 #awards { background: var(--dark2); }
 
-.awards-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
-}
-.awards-col-title {
-  font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--muted-d); margin-bottom: 1.1rem;
-}
-
-.award-list { display: flex; flex-direction: column; gap: .7rem; }
-.award-card {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1.1rem 1.25rem; border-radius: var(--r);
-  border: 1px solid var(--border-d); background: var(--surface);
-  transition: border-color .25s, transform .2s;
-}
-.award-card:hover { border-color: rgba(245,158,11,.3); transform: translateX(4px); }
-.award-icon { font-size: 1.7rem; flex-shrink: 0; }
-.award-name { font-size: .92rem; font-weight: 600; color: var(--on-dark); line-height: 1.3; }
-.award-org  { font-size: .75rem; color: var(--muted-d); margin-top: .15rem; }
-
-.cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; }
 .cert-card {
   padding: 1rem 1.15rem; border-radius: var(--r-sm);
   border: 1px solid var(--border-d); background: var(--surface);
@@ -611,20 +591,20 @@ footer {
 @media (max-width: 1100px) {
   .proj-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-menu-btn { display: block; }
   section { padding: 5.5rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .awards-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+.contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
   .proj-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .cert-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
@@ -643,7 +623,7 @@ footer {
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#awards">Awards</a></li>
+      <li><a href="#awards">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -664,7 +644,7 @@ footer {
   <a href="#projects"   onclick="closeMobile()">Projects</a>
   <a href="#skills"     onclick="closeMobile()">Skills</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
-  <a href="#awards"     onclick="closeMobile()">Awards</a>
+  <a href="#awards"     onclick="closeMobile()">Certifications</a>
   <a href="#contact"    onclick="closeMobile()">Contact</a>
   <a href="uploads/HasnainAkhtar_Resume.pdf" target="_blank" onclick="closeMobile()" style="color:var(--accent)">Resume ↗</a>
 </div>
@@ -1205,63 +1185,28 @@ footer {
   </div>
 </section>
 
-<!-- ═══ AWARDS & CERTS ═══ -->
+<!-- ═══ CERTIFICATIONS ═══ -->
 <section id="awards">
   <div class="container">
-    <span class="sec-eyebrow fu">Recognition</span>
-    <h2 class="sec-title fu">Awards &amp; Certifications.</h2>
-
-    <div class="awards-grid">
-
-      <div class="fu">
-        <div class="awards-col-title">Academic Honors</div>
-        <div class="award-list">
-          <div class="award-card">
-            <div class="award-icon">🥇</div>
-            <div>
-              <div class="award-name">Gold Medal: Rector's List of Honors</div>
-              <div class="award-org">FAST NUCES · Fall 2025</div>
-            </div>
-          </div>
-          <div class="award-card">
-            <div class="award-icon">🏅</div>
-            <div>
-              <div class="award-name">Dean's List of Honors</div>
-              <div class="award-org">FAST NUCES · Spring 2025</div>
-            </div>
-          </div>
-          <div class="award-card">
-            <div class="award-icon">🏅</div>
-            <div>
-              <div class="award-name">Dean's List of Honors</div>
-              <div class="award-org">FAST NUCES · Fall 2024</div>
-            </div>
-          </div>
-        </div>
+    <span class="sec-eyebrow fu">Credentials</span>
+    <h2 class="sec-title fu">Certifications.</h2>
+    <div class="cert-grid fu">
+      <div class="cert-card">
+        <div class="cert-provider">AWS</div>
+        <div class="cert-name">Cloud Practitioner (CLF-C02) Cert Prep</div>
       </div>
-
-      <div class="fu">
-        <div class="awards-col-title">Certifications</div>
-        <div class="cert-grid">
-          <div class="cert-card">
-            <div class="cert-provider">AWS</div>
-            <div class="cert-name">Cloud Practitioner (CLF-C02) Cert Prep</div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-provider">Coursera / DeepLearning.AI</div>
-            <div class="cert-name">Generative AI with Large Language Models</div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-provider">LinkedIn Learning</div>
-            <div class="cert-name">Generative AI Essentials: Overview and Impact</div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-provider">Coursera / Stanford</div>
-            <div class="cert-name">Supervised ML: Regression &amp; Classification</div>
-          </div>
-        </div>
+      <div class="cert-card">
+        <div class="cert-provider">Coursera / DeepLearning.AI</div>
+        <div class="cert-name">Generative AI with Large Language Models</div>
       </div>
-
+      <div class="cert-card">
+        <div class="cert-provider">LinkedIn Learning</div>
+        <div class="cert-name">Generative AI Essentials: Overview and Impact</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-provider">Coursera / Stanford</div>
+        <div class="cert-name">Supervised ML: Regression &amp; Classification</div>
+      </div>
     </div>
   </div>
 </section>
